@@ -9,10 +9,12 @@
 namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="gigs")
+ * @Vich\Uploadable
  */
 
 class Gigs
@@ -78,9 +80,44 @@ class Gigs
 
 
 
+    /**
+     * It only stores the name of the image associated with the product.
+     *
+     * @ORM\Column(type="string", length=255)
+     *
+     * @var string
+     */
+    private $icon_image;
+
+    /**
+     * It only stores the name of the image associated with the product.
+     *
+     * @ORM\Column(type="string", length=255)
+     *
+     * @var string
+     */
+    private $background_image;
+
+    /**
+     * This unmapped property stores the binary contents of the image file
+     * associated with the product.
+     *
+     * @Vich\UploadableField(mapping="gig_images", fileNameProperty="icon_image")
+     *
+     * @var File
+     */
     protected $icon;
 
 
+
+    /**
+     * This unmapped property stores the binary contents of the image file
+     * associated with the product.
+     *
+     * @Vich\UploadableField(mapping="gig_images", fileNameProperty="background_image")
+     *
+     * @var File
+     */
     protected $background;
 
     /**
@@ -213,6 +250,102 @@ class Gigs
     public function setImages($images): void
     {
         $this->images = $images;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStock(): int
+    {
+        return $this->stock;
+    }
+
+    /**
+     * @param int $stock
+     */
+    public function setStock(int $stock): void
+    {
+        $this->stock = $stock;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSelled(): int
+    {
+        return $this->selled;
+    }
+
+    /**
+     * @param int $selled
+     */
+    public function setSelled(int $selled): void
+    {
+        $this->selled = $selled;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIcon()
+    {
+        return $this->icon;
+    }
+
+    /**
+     * @param mixed $icon
+     */
+    public function setIcon($icon): void
+    {
+        $this->icon = $icon;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBackground()
+    {
+        return $this->background;
+    }
+
+    /**
+     * @param mixed $background
+     */
+    public function setBackground($background): void
+    {
+        $this->background = $background;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIconImage()
+    {
+        return $this->icon_image;
+    }
+
+    /**
+     * @param string $icon_image
+     */
+    public function setIconImage(string $icon_image): void
+    {
+        $this->icon_image = $icon_image;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBackgroundImage()
+    {
+        return $this->background_image;
+    }
+
+    /**
+     * @param string $background_image
+     */
+    public function setBackgroundImage(string $background_image): void
+    {
+        $this->background_image = $background_image;
     }
 
 
