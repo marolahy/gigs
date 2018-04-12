@@ -28,17 +28,16 @@ easy_admin:
                 fields:
                     - { type: 'group', css_class: 'col-sm-8', label: 'Basic information', icon: 'pencil' }
                     - { property: 'name', css_class: 'large' }
-                    - { property: 'description', type:  'Hillrange\CKEditor\Form\CKEditorType'   }
+                    - { property: 'description', type:  'Hillrange\CKEditor\Form\CKEditorType',css_class: 'large'   }
                     - { type: 'divider' }
                     - { property: 'category', type: 'easyadmin_autocomplete' }
-                    - { type: 'group', css_class: 'col-sm-4', label: 'Gigs Details', icon: 'cube' }
+                    - { type: 'group', css_class: 'col-sm-8', label: 'Gigs Details', icon: 'cube' }
                     - { property: 'price', type: 'number' }
-                    - { type: 'section', label: 'Advanced Settings', icon: 'warning', help: 'Reserved for administrators use' }
+                    - { property: 'stock', type: 'number' }
+                    - { property: 'selled', type: 'number' }
+                    - { type: 'section', label: 'Advanced Settings', icon: 'warning', help: 'if show in featured gigs' }
                     - { property: 'featured', label: 'Featured' }
-                    - { type: 'group', css_class: 'col-sm-8 new-row' }
-                    - { property: 'featured' }
-                    - { type: 'group', css_class: 'col-sm-4' }
                     - { property: 'category', type: 'easyadmin_autocomplete' }
-                    - { type: 'group', css_class: 'col-sm-4', label: 'Attachments', icon: 'paperclip' }
+                    - { type: 'group', css_class: 'col-sm-8', label: 'Attachments', icon: 'paperclip' }
                     - { property: 'icon', type: 'vich_image', type_options: { required: true } }
                     - { property: 'background', type: 'vich_image', type_options: { required: true } }

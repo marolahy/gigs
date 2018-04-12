@@ -14,6 +14,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
  * @ORM\Entity
  * @ORM\Table(name="gig_image")
+ * @Vich\Uploadable
  */
 class GigImages
 {
@@ -39,7 +40,7 @@ class GigImages
      * This unmapped property stores the binary contents of the image file
      * associated with the product.
      *
-     * @Vich\UploadableField(mapping="product_images", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="gig_images", fileNameProperty="image")
      *
      * @var File
      */
@@ -88,7 +89,7 @@ class GigImages
     /**
      * @return File
      */
-    public function getImageFile(): File
+    public function getImageFile()
     {
         return $this->imageFile;
     }

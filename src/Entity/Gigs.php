@@ -255,7 +255,7 @@ class Gigs
     /**
      * @return int
      */
-    public function getStock(): int
+    public function getStock()
     {
         return $this->stock;
     }
@@ -271,7 +271,7 @@ class Gigs
     /**
      * @return int
      */
-    public function getSelled(): int
+    public function getSelled()
     {
         return $this->selled;
     }
@@ -347,7 +347,10 @@ class Gigs
     {
         $this->background_image = $background_image;
     }
-
+    public function __toString()
+    {
+        return $this->getName();
+    }
 
 
 }

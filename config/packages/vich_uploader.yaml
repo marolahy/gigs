@@ -4,4 +4,4 @@ vich_uploader:
     mappings:
         gig_images:
             uri_prefix: '%app.path.gig_images%'
-            upload_destination: '%kernel.root_dir%/../web/uploads/images/gigs'
+            upload_destination: '%kernel.root_dir%/../public/uploads/images/gigs'

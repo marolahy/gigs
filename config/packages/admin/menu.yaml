@@ -4,4 +4,6 @@ easy_admin:
             - label: 'Gigs'
               icon: 'shopping-basket'
               children:
-                  - { entity: 'Gigs', icon: 'th-list', label: 'menu.product.add', params: { action: 'new' }  }
+                  - { entity: 'Category', icon: 'th-list', label: 'category', params: { action: 'new' }  }
+                  - { entity: 'Gigs', icon: 'th-list', label: 'gigs', params: { action: 'new' }  }
+                  - { entity: 'GigImages', icon: 'th-list', label: 'gig image', params: { action: 'new' }  }
