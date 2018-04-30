@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Cifope
- * Date: 05/04/2018
- * Time: 11:37
- */
-
 namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
